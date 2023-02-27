@@ -63,7 +63,7 @@ addTwoNumbers('Hello', 5) //=> NaN
 function addTwoNumbers(a, b){
   if (typeof a === "number" && typeof b === "number")
    return a + b
-   else
+  else
    return "NaN"
 }
 
@@ -126,8 +126,10 @@ function addList(){
     sum += arguments[i];
   }
   return sum;
-  }
-  console.log(addList(70, 105, 23, -150, 2))
+}
+console.log(addList(70, 105, 23, -150, 2))
+
+
 
 
 /*-----------------------------------------------------------------
@@ -137,7 +139,8 @@ Difficulty: Basic
 
 Prompt:
 
-- Write a function named computeRemainder that accepts two numeric arguments and returns the remainder of the division of those two numbers.
+- Write a function named computeRemainder that accepts two numeric arguments and returns the remainder of the 
+division of those two numbers.
 - The first argument should be the dividend and the second argument should be the divisor.
 - If a 0 is passed in as the second argument you should return JavaScript's special numeric value: Infinity.
 - For extra fun, complete this challenge without using the modulus (%) operator.
@@ -149,10 +152,22 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
+function computeRemainder(number1, divider){
+  return number1 % divider;
+  }
+ console.log(computeRemainder(17, 3))
 
-function computeRemainder(){}
-
-
+ // extra //
+  function computeRemainder(number1, divider){
+    if (divider === 0){
+      return "Infinity"
+    }
+    while (divider <= number1){
+        number1 = number1 - divider
+    }
+    return number1
+}
+console.log(computeRemainder(10, 0))
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -449,7 +464,7 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 //=> ["1 - rose", "2 - tulip", "3 - daisy"]
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
-function mapArray(){}
+//function mapArray(){}
 
 
 
@@ -488,7 +503,7 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-function reduceArray(){}
+//function reduceArray(){}
 
 
 
@@ -519,7 +534,7 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
-function flatten(){}
+//function flatten(){}
 
 
 
@@ -542,7 +557,7 @@ isPrime(29) //=> true
 isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
-function isPrime(){}
+//function isPrime(){}
 
 
 
@@ -571,7 +586,7 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
-function primeFactors(){}
+//function primeFactors(){}
 
 
 
@@ -595,7 +610,7 @@ intersection(['a', 1], [true, 'a', 15]) //=> ['a']
 intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
-function intersection(){}
+//function intersection(){}
 
 
 
@@ -622,7 +637,7 @@ balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
 
-function balancedBrackets(){}
+//function balancedBrackets(){}
 
 
 
@@ -652,7 +667,7 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
 
-function isWinningTicket(){}
+//function isWinningTicket(){}
 
 
 
@@ -681,7 +696,7 @@ getNumForIP( '192.156.99.15' ) // => 3231474447
 getNumForIP( '10.0.0.1' ) // => 167772161
 -----------------------------------------------------------------*/
 // Your solution for 25-getNumForIP here:
-function getNumForIP(){}
+//function getNumForIP(){}
 
 
 
@@ -711,7 +726,7 @@ toCamelCase( 'A_b_c' ) // => 'ABC'
 -----------------------------------------------------------------*/
 // Your solution for 26-toCamelCase here:
 
-function toCamelCase(){}
+//function toCamelCase(){}
 
 
 
@@ -741,7 +756,7 @@ countTheBits( 65535 )  //=> 16
 -----------------------------------------------------------------*/
 // Your solution for 27-countTheBits here:
 
-function countTheBits(){}
+//function countTheBits(){}
 
 
 
@@ -769,7 +784,7 @@ gridTrip( [-22, 100], 'L2L15D50U1D9') //=> [-80, 83]
 -----------------------------------------------------------------*/
 // Your solution for 28-gridTrip here:
 
-function gridTrip(){}
+//function gridTrip(){}
 
 
 
@@ -799,7 +814,7 @@ addChecker( [10, 15, 16, 22], 19 ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 29-addChecker here:
 
-function addChecker(){}
+//function addChecker(){}
 
 
 
@@ -831,4 +846,5 @@ totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
 -----------------------------------------------------------------*/
 // Your solution for 30- here:
 
-function totalTaskTime(){}
+//function totalTaskTime(){}
+
