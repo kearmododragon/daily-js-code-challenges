@@ -187,8 +187,17 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
-function range(){}
-
+function range(num1, num2){
+  if (num1 < num2)
+    return "First argument must be less than second"
+  else ((num1+num2)/2)
+  return range
+  
+    // add both numbers in array
+  // divide by array length
+  // if num1 < num 2, return "first argument must be less than second"
+}
+console.log(range)
 
 
 
@@ -207,7 +216,33 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-function reverseUpcaseString(){}
+function reverseUpcaseString(string){
+
+  var splitString = string.split("");
+
+  // this piece of code will take whatever word I put in the code and break it down into an array
+
+  var reverseArray = splitString.reverse();
+
+  // This piece of code will reverse the order of the array that I have just created
+
+  var joinArray = reverseArray.join("");
+
+  // This piece of code will join the array back into a string element
+
+  // this piece of code will alter the string to upper case
+  
+  return toUpperCase(joinArray); //RETURNS ERROR//
+
+
+  //This should finish the code by returning my chosen word
+}
+
+// accept single string argument
+
+console.log(reverseUpcaseString("hello"))
+
+
 
 
 
@@ -846,5 +881,4 @@ totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
 -----------------------------------------------------------------*/
 // Your solution for 30- here:
 
-//function totalTaskTime(){}
-
+//function totalTaskTime(){}(}
