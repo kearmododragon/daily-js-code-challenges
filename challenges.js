@@ -230,9 +230,12 @@ function reverseUpcaseString(string){
 
   // This piece of code will join the array back into a string element
 
+  var joinArray = joinArray.toUpperCase();
+
   // this piece of code will alter the string to upper case
+
   
-  return toUpperCase(joinArray); //RETURNS ERROR//
+  return joinArray; 
 
 
   //This should finish the code by returning my chosen word
@@ -253,16 +256,36 @@ Difficulty: Basic
 
 Prompt:
 
-- Write a function called removeEnds that accepts a single string argument, then returns the a string with the first and last characters removed.
+- Write a function called removeEnds that accepts a single string argument, then returns the 
+string with the first and last characters removed.
 - If the length of the string argument is less than 3, return an empty string.
 
 Examples:
 
-removeEnds('SEI Rocks!'); //=> "DI Rocks"
+removeEnds('SEI Rocks!'); //=> "EI Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
-function removeEnds(){}
+function removeEnds(){
+}
+
+// program to remove item from an array
+
+function removeItemFromArray(array, n) {
+  const index = array.indexOf(n);
+
+  // if the element is in the array, remove it
+  if(index > -1) {
+
+      // remove item
+      array.splice(index, 1);
+  }
+  return array;
+}
+
+const result = removeItemFromArray([1, 2, 3 , 4, 5], 2);
+
+console.log(result);
 
 
 
@@ -881,4 +904,4 @@ totalTaskTime( [5, 2, 6, 8, 7, 2], 3 ) // => 12
 -----------------------------------------------------------------*/
 // Your solution for 30- here:
 
-//function totalTaskTime(){}(}
+//function totalTaskTime(){}
