@@ -34,8 +34,8 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 
-function addOne(x){
-return x + 1
+function addOne(x) {
+  return x + 1
 }
 console.log(addOne(2))
 
@@ -60,11 +60,11 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 
-function addTwoNumbers(a, b){
+function addTwoNumbers(a, b) {
   if (typeof a === "number" && typeof b === "number")
-   return a + b
+    return a + b
   else
-   return "NaN"
+    return "NaN"
 }
 
 console.log(addTwoNumbers("hello", 3))
@@ -93,7 +93,7 @@ sumNumbers([]) //=> 0
 
 function sumNumbers(numbers) {
   var sum = 0;
-  for(var i = 0; i < numbers.length; i++) {
+  for (var i = 0; i < numbers.length; i++) {
     sum += numbers[i];
   }
   return sum;
@@ -120,7 +120,7 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-function addList(){
+function addList() {
   var sum = 0;
   for (var i = 0; i < arguments.length; i++) {
     sum += arguments[i];
@@ -152,20 +152,20 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
-function computeRemainder(number1, divider){
+function computeRemainder(number1, divider) {
   return number1 % divider;
-  }
- console.log(computeRemainder(17, 3))
+}
+console.log(computeRemainder(17, 3))
 
- // extra //
-  function computeRemainder(number1, divider){
-    if (divider === 0){
-      return "Infinity"
-    }
-    while (divider <= number1){
-        number1 = number1 - divider
-    }
-    return number1
+// extra //
+function computeRemainder(number1, divider) {
+  if (divider === 0) {
+    return "Infinity"
+  }
+  while (divider <= number1) {
+    number1 = number1 - divider
+  }
+  return number1
 }
 console.log(computeRemainder(10, 0))
 
@@ -187,13 +187,13 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
-function range(num1, num2){
+function range(num1, num2) {
   if (num1 < num2)
     return "First argument must be less than second"
-  else ((num1+num2)/2)
+  else ((num1 + num2) / 2)
   return range
-  
-    // add both numbers in array
+
+  // add both numbers in array
   // divide by array length
   // if num1 < num 2, return "first argument must be less than second"
 }
@@ -216,28 +216,16 @@ reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES"
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
-function reverseUpcaseString(string){
-
+function reverseUpcaseString(string) {
   var splitString = string.split("");
-
   // this piece of code will take whatever word I put in the code and break it down into an array
-
   var reverseArray = splitString.reverse();
-
   // This piece of code will reverse the order of the array that I have just created
-
   var joinArray = reverseArray.join("");
-
   // This piece of code will join the array back into a string element
-
   var joinArray = joinArray.toUpperCase();
-
   // this piece of code will alter the string to upper case
-
-  
-  return joinArray; 
-
-
+  return joinArray;
   //This should finish the code by returning my chosen word
 }
 
@@ -266,7 +254,7 @@ removeEnds('SEI Rocks!'); //=> "EI Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
-function removeEnds(){
+function removeEnds() {
 }
 
 // program to remove item from an array
@@ -275,15 +263,15 @@ function removeItemFromArray(array, n) {
   const index = array.indexOf(n);
 
   // if the element is in the array, remove it
-  if(index > -1) {
+  if (index > -1) {
 
-      // remove item
-      array.splice(index, 1);
+    // remove item
+    array.splice(index, 1);
   }
   return array;
 }
 
-const result = removeItemFromArray([1, 2, 3 , 4, 5], 2);
+const result = removeItemFromArray([1, 2, 3, 4, 5], 2);
 
 console.log(result);
 
@@ -308,9 +296,19 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
-function charCount (){}
-
-
+/*function charCount(str) {
+var result {};
+for (var i=0; str.length; i++){
+  var char = str.charAt(i);
+  if(result[char]) {
+    result[char]++;
+  }else {
+    result[char] =1;
+  }
+}}
+console.log(charCound("hello"))
+*/
+//Run through the whole array of letters, if the character is new it =1, if there is already a log of said character, add 1.
 
 
 /*-----------------------------------------------------------------
@@ -334,8 +332,13 @@ formatWithPadding(42, '*', 10); //=> "********42"
 formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
-function formatWithPadding(){}
-
+function formatWithPadding(int, char, length) {
+  var result = int.toFixed(0);
+  while (result.length < length) {
+    result = char + result;
+  }
+  return result;
+}
 
 
 
@@ -359,8 +362,19 @@ isPalindrome('A nut for a jar of tuna'); //=> true
 isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
-function isPalindrome
-
+function isPalindrome(str) {
+  let reverse = str.split("").reverse().filter(c=>c!== " ").join("").toLowerCase()
+  let forward = str.split("").filter(c => c !== " ").join("").toLowerCase()
+  console.log(reverse, "||", forward)
+  if (reverse === forward) {
+    return true
+  }
+  return false
+}
+console.log(isPalindrome('SEI Rocks')); //=> false
+console.log(isPalindrome('rotor')); //=> true
+console.log(isPalindrome('A nut for a jar of tuna')); //=> true
+console.log(isPalindrome('')); //=> true
 
 
 
@@ -461,7 +475,7 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
-Difficulty:  Intermediate  
+Difficulty:  Intermediate
 
 Prompt:
 
@@ -480,7 +494,7 @@ findHighestPriced([
   { sku: 'c3', price: 50 },
   { sku: 'd4', price: 10 }
 ]);
-//=> { sku: 'c3', price: 50 } 
+//=> { sku: 'c3', price: 50 }
 
 findHighestPriced([
   { sku: 'a1', price: 25 },
@@ -585,7 +599,7 @@ Hint:
 Examples:
 
 flatten( [1, [2, 3]] );
-//=> [1, 2, 3]  (a new array) 
+//=> [1, 2, 3]  (a new array)
 
 flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
@@ -609,7 +623,7 @@ Prompt:
 Examples:
 
 isPrime(2) //=> true
-isPrime(3) //=> true 
+isPrime(3) //=> true
 isPrime(4) //=> false
 isPrime(29) //=> true
 isPrime(200) //=> false
