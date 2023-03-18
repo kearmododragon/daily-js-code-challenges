@@ -37,7 +37,7 @@ addOne(-5) //=> -4
 function addOne(x) {
   return x + 1
 }
-console.log(addOne(2))
+//console.log(addOne(2))
 
 
 
@@ -67,7 +67,7 @@ function addTwoNumbers(a, b) {
     return "NaN"
 }
 
-console.log(addTwoNumbers("hello", 3))
+//console.log(addTwoNumbers("hello", 3))
 
 
 
@@ -98,7 +98,7 @@ function sumNumbers(numbers) {
   }
   return sum;
 }
-console.log(sumNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+//console.log(sumNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 
 
 /*-----------------------------------------------------------------
@@ -127,7 +127,7 @@ function addList() {
   }
   return sum;
 }
-console.log(addList(70, 105, 23, -150, 2))
+//console.log(addList(70, 105, 23, -150, 2))
 
 
 
@@ -167,7 +167,7 @@ function computeRemainder(number1, divider) {
   }
   return number1
 }
-console.log(computeRemainder(10, 0))
+//console.log(computeRemainder(10, 0))
 
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -197,7 +197,7 @@ function range(num1, num2) {
   // divide by array length
   // if num1 < num 2, return "first argument must be less than second"
 }
-console.log(range)
+//console.log(range)
 
 
 
@@ -231,7 +231,7 @@ function reverseUpcaseString(string) {
 
 // accept single string argument
 
-console.log(reverseUpcaseString("hello"))
+//console.log(reverseUpcaseString("hello"))
 
 
 
@@ -273,7 +273,7 @@ function removeItemFromArray(array, n) {
 
 const result = removeItemFromArray([1, 2, 3, 4, 5], 2);
 
-console.log(result);
+//console.log(result);
 
 
 
@@ -296,8 +296,8 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
-/*function charCount(str) {
-var result {};
+function charCount(str) {
+var result = {};
 for (var i=0; str.length; i++){
   var char = str.charAt(i);
   if(result[char]) {
@@ -306,8 +306,9 @@ for (var i=0; str.length; i++){
     result[char] =1;
   }
 }}
-console.log(charCound("hello"))
-*/
+//console.log(charCount("hello"))
+//RETURN array.length-1
+
 //Run through the whole array of letters, if the character is new it =1, if there is already a log of said character, add 1.
 
 
@@ -371,10 +372,10 @@ function isPalindrome(str) {
   }
   return false
 }
-console.log(isPalindrome('SEI Rocks')); //=> false
-console.log(isPalindrome('rotor')); //=> true
-console.log(isPalindrome('A nut for a jar of tuna')); //=> true
-console.log(isPalindrome('')); //=> true
+//console.log(isPalindrome('SEI Rocks')); //=> false
+//console.log(isPalindrome('rotor')); //=> true
+//console.log(isPalindrome('A nut for a jar of tuna')); //=> true
+//console.log(isPalindrome('')); //=> true
 
 
 
@@ -399,10 +400,18 @@ hammingDistance('!!!!', '****'); //=> 4
 hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
-//function hammingDistance(){}
-
-
-
+function hammingDistance(str1, str2){
+  if (str1.length !== str2.length) return NaN;
+  var count =0;
+  for (var i = 0; i < str1.length; i++) {
+    if (str1.charAt(i) !== str2.charAt(i)) count ++;
+  }
+  return count
+}
+//console.log(hammingDistance('abc', 'abc'));
+//console.log(hammingDistance('a1c', 'a2c'));
+//console.log(hammingDistance('!!!!', '****'));
+//console.log(hammingDistance('abc', 'ab'));
 
 /*-----------------------------------------------------------------
 Challenge: 13-mumble
@@ -424,8 +433,14 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-//function mumble ()
-
+function mumble (string){
+  var answer = "";
+  for (var i = 0; i < string.length; i++){
+    answer += ((i || "") && "-") + string.charAt(i).repeat(i+1);
+  }
+  return answer;
+}
+//console.log(mumble('abc'));
 
 
 /*-----------------------------------------------------------------
@@ -446,7 +461,15 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
-//function fromPairs(){}
+function fromPairs(array){
+var object = {};
+array.forEach(function(newArray) {
+  object[newArray[0]] = newArray[1];
+});
+return object;
+}
+//console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]))
+
 
 
 
