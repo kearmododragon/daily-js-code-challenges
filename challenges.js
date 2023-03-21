@@ -434,11 +434,11 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 // Your solution for 13-mumble here:
 
 function mumble (string){
-  var answer = "";
-  for (var i = 0; i < string.length; i++){
-    answer += ((i || "") && "-") + string.charAt(i).repeat(i+1);
+  let output = []
+  for (let i=0; i<string.length; i++){
+    output.push(string [i].repeat(i+1))
   }
-  return answer;
+  return output.join("-")
 }
 //console.log(mumble('abc'));
 
@@ -462,10 +462,11 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 // Your solution for 14-fromPairs here:
 
 function fromPairs(array){
-var object = {};
-array.forEach(function(newArray) {
-  object[newArray[0]] = newArray[1];
-});
+let object = {}
+array.forEach(el =>{
+  let [ key, value ] = el
+  output [ key ] = value
+})
 return object;
 }
 //console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]))
@@ -491,7 +492,7 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
-// function mergeObjects(){}
+ function mergeObjects(){}
 
 
 
