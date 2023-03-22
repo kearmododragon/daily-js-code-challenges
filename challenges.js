@@ -155,7 +155,7 @@ computeRemainder(10.5, 3) //=> 1.5
 function computeRemainder(number1, divider) {
   return number1 % divider;
 }
-console.log(computeRemainder(17, 3))
+//console.log(computeRemainder(17, 3))
 
 // extra //
 function computeRemainder(number1, divider) {
@@ -297,15 +297,16 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 function charCount(str) {
-var result = {};
-for (var i=0; str.length; i++){
-  var char = str.charAt(i);
-  if(result[char]) {
-    result[char]++;
-  }else {
-    result[char] =1;
+  var result = {};
+  for (var i = 0; str.length; i++) {
+    var char = str.charAt(i);
+    if (result[char]) {
+      result[char]++;
+    } else {
+      result[char] = 1;
+    }
   }
-}}
+}
 //console.log(charCount("hello"))
 //RETURN array.length-1
 
@@ -364,7 +365,7 @@ isPalindrome(''); //=> true
 -----------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 function isPalindrome(str) {
-  let reverse = str.split("").reverse().filter(c=>c!== " ").join("").toLowerCase()
+  let reverse = str.split("").reverse().filter(c => c !== " ").join("").toLowerCase()
   let forward = str.split("").filter(c => c !== " ").join("").toLowerCase()
   console.log(reverse, "||", forward)
   if (reverse === forward) {
@@ -400,11 +401,11 @@ hammingDistance('!!!!', '****'); //=> 4
 hammingDistance('abc', 'ab'); //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 12-hammingDistance here:
-function hammingDistance(str1, str2){
+function hammingDistance(str1, str2) {
   if (str1.length !== str2.length) return NaN;
-  var count =0;
+  var count = 0;
   for (var i = 0; i < str1.length; i++) {
-    if (str1.charAt(i) !== str2.charAt(i)) count ++;
+    if (str1.charAt(i) !== str2.charAt(i)) count++;
   }
   return count
 }
@@ -433,10 +434,10 @@ mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
 
-function mumble (string){
+function mumble(string) {
   let output = []
-  for (let i=0; i<string.length; i++){
-    output.push(string [i].repeat(i+1))
+  for (let i = 0; i < string.length; i++) {
+    output.push(string[i].repeat(i + 1))
   }
   return output.join("-")
 }
@@ -461,13 +462,13 @@ fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sal
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
 
-function fromPairs(array){
-let object = {}
-array.forEach(el =>{
-  let [ key, value ] = el
-  output [ key ] = value
-})
-return object;
+function fromPairs(array) {
+  let object = {}
+  array.forEach(el => {
+    let [key, value] = el
+    output[key] = value
+  })
+  return object;
 }
 //console.log(fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]))
 
@@ -492,7 +493,7 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
- function mergeObjects(){}
+//function mergeObjects(){}
 
 
 
@@ -529,8 +530,25 @@ findHighestPriced([
 //=> { sku: 'b2', price: 50 }
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
-
-//function findHighestPriced(){}
+test = [  { sku: 'a1', price: 25 },
+{ sku: 'b2', price: 5 },
+{ sku: 'c3', price: 50 },
+{ sku: 'd4', price: 10 }
+]
+function findHighestPriced(array) {
+  let highestPrice = array[0].price
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].price > highestPrice){
+      console.log("current: ", test[i].price)
+      //return Math.max(...array)
+      console.log("highest", highestPrice)
+      highestPrice = array[i].price
+       
+    }
+  }
+  console.log("Actual highest: ", highestPrice)
+}
+console.log(findHighestPriced(test))
 
 
 
