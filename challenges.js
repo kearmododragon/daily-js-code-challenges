@@ -548,7 +548,7 @@ function findHighestPriced(array) {
   }
   console.log("Actual highest: ", highestPrice)
 }
-console.log(findHighestPriced(test))
+//console.log(findHighestPriced(test))
 
 
 
@@ -648,7 +648,19 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
 
-//function flatten(){}
+function flatten(arr){
+  let holder = []
+  for(let i=0; i<arr.length; i++){
+  if(Array.isArray(arr[i])){
+    holder=holder.concat(flatten(arr[i]))
+  } else {
+    holder.push(arr[i])
+  }
+}  console.log(holder)
+return holder
+}
+flatten( [1, [2, 3]] );
+flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] )
 
 
 
