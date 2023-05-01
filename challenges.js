@@ -493,7 +493,14 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c:
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
 
-//function mergeObjects(){}
+function mergeObjects(target, ...objects) {
+  objects.forEach(function(obj) {
+    for(var key in obj) {
+      target[key] = obj[key];
+    }
+  });
+  return target;
+}
 
 
 
@@ -578,7 +585,13 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 //=> ["1 - rose", "2 - tulip", "3 - daisy"]
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
-//function mapArray(){}
+function mapArray(arr, cb) {
+  var newArr = [];
+  arr.forEach(function(el, idx) {
+    newArr.push( cb(el, idx) );
+  });
+  return newArr;
+}
 
 
 
@@ -617,7 +630,13 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-//function reduceArray(){}
+function reduceArray(arr, cb, initAcc) {
+  var acc = initAcc;
+  arr.forEach(function(el, idx) {
+    acc = cb(acc, el, idx);
+  });
+  return acc;
+}
 
 
 
@@ -683,7 +702,13 @@ isPrime(29) //=> true
 isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
-//function isPrime(){}
+function isPrime(n) {
+  if (n < 2 || !Number.isInteger(n)) return false;
+  for (var i = 2; i <= n / 2; i++) {
+    if (Number.isInteger(n / i)) return false;
+  }
+  return true;
+}
 
 
 
@@ -712,7 +737,29 @@ primeFactors(200) //=> [2, 2, 2, 5, 5]
 -----------------------------------------------------------------*/
 // Your solution for 21-primeFactors here:
 
-//function primeFactors(){}
+function primeFactors(n) {
+  var factors = [];
+  if (n < 2 || !Number.isInteger(n)) return factors;
+    function isPrime(n) {
+    if (n < 2 || !Number.isInteger(n)) return false;
+    for (var i = 2; i <= n / 2; i++) {
+      if (Number.isInteger(n / i)) return false;
+    }
+    return true;
+  }
+  var prime = 2;
+  while (!isPrime(n)) {
+    if (Number.isInteger(n / prime)) {
+      factors.push(prime);
+      n = n / prime;
+    } else {
+      prime++;
+      while (!isPrime(prime)) prime++;
+    }
+  }
+  factors.push(n);
+  return factors;
+}
 
 
 
@@ -736,7 +783,15 @@ intersection(['a', 1], [true, 'a', 15]) //=> ['a']
 intersection([1, 'a', true, 1, 1], [true, 1, 'b', 1]) //=> [1, true, 1]
 -----------------------------------------------------------------*/
 // Your solution for 22-intersection here:
-//function intersection(){}
+function intersection(a1, a2) {
+  var result = [];
+  var _a2 = [...a2];
+  a1.forEach(val => {
+    var idx = _a2.indexOf(val);
+    if (idx > -1) result.push(_a2.splice(idx, 1)[0]);
+  });
+  return result;
+}
 
 
 
@@ -763,7 +818,19 @@ balancedBrackets( '[({}[])]' ) // => true
 -----------------------------------------------------------------*/
 // Your solution for 23-balancedBrackets here:
 
-//function balancedBrackets(){}
+function balancedBrackets(str) {
+  if (str.length % 2) return false;
+  var stack = [];
+  for (var i = 0; i < str.length; i++) {
+    var b = str.charAt(i);
+    if ( '([{'.includes(b) ) {
+      stack.push(b);
+    } else {
+      if (!'() {} []'.includes(stack.pop() + b)) return false;
+    }
+  }
+  return true;
+}
 
 
 
@@ -793,7 +860,17 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
 
-//function isWinningTicket(){}
+function isWinningTicket(ticket){
+  var winner = true;
+  for (var i = 0; i < ticket.length; i++) {
+    var charFromNumber = String.fromCharCode(ticket[i][1]);
+    if (!ticket[i][0].includes(charFromNumber)) {
+      winner = false;
+      break;
+    }
+  }
+  return winner;
+}
 
 
 
